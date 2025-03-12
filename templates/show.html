@@ -3,9 +3,10 @@
 {% load static %}
 {% block content %}
 
-<h1 class="text-center">All Appointments</h1>
+    <h1 class="text-center">All Appointments</h1>
     <div class="d-flex flex-wrap gap-lg-4 container">
     {% for x in all %}
+
 	<div class="card w-25 p-5 shadow-lg">
             <p class="text-warning fw-bold">{{x.name }}</p>
         <p><strong>message:</strong>{{ x.message }}</p>
@@ -23,12 +24,11 @@
             </a>
 
 
+                 <a href="{% url 'pay' %}" class="text-success">
+                    <i class="bi bi-credit-card"></i>Pay
+                </a>
 
 
-
-            <a href="/delete/{{x.id }}">
-               <i class="bi bi-trash me-5 text-danger" >delete</i>
-            </a>
 
         </p>
 
